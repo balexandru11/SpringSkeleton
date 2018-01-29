@@ -9,6 +9,12 @@ public class HomeController {
 
     @RequestMapping("/hello")
     public String hello(Model model) {
+        return "index";
+
+    }
+
+    @RequestMapping("/hellojsp")
+    public String hello2(Model model) {
         model.addAttribute("greeting", "Hello Spring MVC");
         return "helloworld";
 
