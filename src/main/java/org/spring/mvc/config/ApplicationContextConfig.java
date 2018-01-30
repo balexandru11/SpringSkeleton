@@ -8,6 +8,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @ComponentScan("org.spring.mvc.*")
+@EnableJpaRepositories(basePackages = "org.spring.mvc.repository")
 public class ApplicationContextConfig {
 
     @Bean(name = "viewResolver")
