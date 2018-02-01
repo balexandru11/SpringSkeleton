@@ -23,12 +23,16 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "country")
+    private String country;
+
     public User() {
     }
 
-    public User(String username, String password) {
+    public User(String username, String password, String country) {
         this.username = username;
         this.password = password;
+        this.country = country;
     }
 
     public Long getId() {
@@ -55,12 +59,22 @@ public class User {
         this.password = password;
     }
 
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", country='" + country + '\'' +
                 '}';
     }
 }

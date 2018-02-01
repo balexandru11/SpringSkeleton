@@ -1,17 +1,23 @@
 package org.spring.mvc.controller;
 
+import org.spring.mvc.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 public class HomeController {
 
-    @RequestMapping("/hello")
-    public String hello(Model model) {
-        model.addAttribute("greeting", "Hello Spring MVC");
-        return "helloworld";
+//    List<User> objects = new ArrayList<>();
 
+    @RequestMapping("/")
+    public String redirect() {
+        return "redirect:/userlist";
+    }
+
+    @RequestMapping("/userlist")
+    public String userList(Model model) {
+        model.addAttribute("user", new User());
+        return "userlist";
     }
 }

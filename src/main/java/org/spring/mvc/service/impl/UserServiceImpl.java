@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 
-
 /**
  * @author balexandru
  */
@@ -21,7 +20,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserRepository userRepository;
+    UserRepository userRepository;
 
     @Override
     public User findById(long id) {
@@ -35,31 +34,31 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUser(User user) {
-
+        userRepository.save(user);
     }
 
     @Override
     public void updateUser(User user) {
-
+        userRepository.save(user);
     }
 
     @Override
     public void deleteUserById(long id) {
-
+        userRepository.delete(id);
     }
 
     @Override
     public List<User> findAllUsers() {
-        return null;
+        return userRepository.findAll();
     }
 
     @Override
     public void deleteAllUsers() {
-
+        userRepository.deleteAll();
     }
 
     @Override
     public boolean isUserExist(User user) {
-        return false;
+        return userRepository.exists(user.getId());
     }
 }
