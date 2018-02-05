@@ -64,7 +64,7 @@ h1 {
 
 /** page structure **/
 #wrapper {
-    display: block;
+    display: inline-block;
     width: 850px;
     background: #fff;
     margin: 0 auto;
